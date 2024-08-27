@@ -22,3 +22,11 @@ C:\Parcial1\ProyectoParcial\obj\Debug\net8.0-windows\ProyectoParcial.Form2.resou
 C:\Parcial1\ProyectoParcial\obj\Debug\net8.0-windows\ProyectoParcial.Form3.resources
 C:\Parcial1\ProyectoParcial\obj\Debug\net8.0-windows\ProyectoParcial.ClientesGestion.resources
 C:\Parcial1\ProyectoParcial\obj\Debug\net8.0-windows\ProyectoParcial.FormDescuento.resources
+C:\Parcial1\ProyectoParcial\obj\Debug\net8.0-windows\ProyectoParcial.FormPlanillas.resources
+C:\Parcial1\ProyectoParcial\obj\Debug\net8.0-windows\ProyectoParcial.PlanillaGestion.resources
+C:\Parcial1\ProyectoParcial\obj\Debug\net8.0-windows\ProyectoParcial.sourcelink.json
+C:\Parcial1\ProyectoParcial\obj\Debug\net8.0-windows\ProyectoParcial.EmpleadoGestion.resources
+C:\Parcial1\ProyectoParcial\obj\Debug\net8.0-windows\ProyectoParcial.FormCajero.resources
+C:\Parcial1\ProyectoParcial\obj\Debug\net8.0-windows\ProyectoParcial.FormFarmaceutico.resources
+C:\Parcial1\ProyectoParcial\obj\Debug\net8.0-windows\ProyectoParcial.LoginForm.resources
+C:\Parcial1\ProyectoParcial\obj\Debug\net8.0-windows\ProyectoParcial.InventarioControl.resources

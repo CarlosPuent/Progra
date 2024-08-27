@@ -12,7 +12,7 @@ namespace ProyectoParcial
 {
     public partial class VentaControl : UserControl
     {
-        private decimal descuentoAplicado = 0; // Variable para almacenar el descuento aplicado
+        private decimal descuentoAplicado = 0; 
 
         public VentaControl()
         {
@@ -21,11 +21,11 @@ namespace ProyectoParcial
 
         private void VentaControl_Load(object sender, EventArgs e)
         {
-            // Configurar las columnas del DataGridView para productos disponibles
+            
             ConfigurarColumnasProductosDisponibles();
-            // Configurar las columnas del DataGridView para productos de la orden
+            
             ConfigurarColumnasProductosOrden();
-            // Cargar clientes y productos disponibles
+           
             CargarClientes();
             CargarProductosDisponibles();
         }
@@ -55,7 +55,7 @@ namespace ProyectoParcial
 
         private void CargarClientes()
         {
-            // Simular la carga de clientes. Reemplazar con la lógica real de carga.
+           
             cmbClientes.Items.Add("Cliente A");
             cmbClientes.Items.Add("Cliente B");
             cmbClientes.Items.Add("Cliente C");
@@ -63,7 +63,7 @@ namespace ProyectoParcial
 
         private void CargarProductosDisponibles()
         {
-            // Simular la carga de productos disponibles. Reemplazar con la lógica real de carga.
+            
             dgvProductosDisponibles.Rows.Add(1, "P001", "Producto A", "Categoría A", "Marca X", 12.00, 50);
             dgvProductosDisponibles.Rows.Add(2, "P002", "Producto B", "Categoría B", "Marca Y", 20.00, 30);
         }
@@ -287,17 +287,20 @@ namespace ProyectoParcial
 
         private Cliente ObtenerClientePorNombre(string nombreCliente)
         {
-            // Implementa la lógica para obtener el cliente según el nombre
-            // Aquí deberías acceder a tu lista de clientes y devolver el objeto cliente correspondiente.
-            // Reemplazar con la lógica real:
+            
             return new Cliente { Nombre = nombreCliente, Puntos = 100, SaldoGiftCard = 50.00m };
         }
 
         private void ActualizarInformacionCliente(Cliente cliente)
         {
-            // Lógica para actualizar visualmente la información del cliente después de aplicar un descuento
+            
             MessageBox.Show($"Puntos restantes: {cliente.Puntos}\nSaldo de Gift Card restante: {cliente.SaldoGiftCard:C2}",
                             "Información del Cliente Actualizada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

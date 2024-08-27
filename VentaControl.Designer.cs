@@ -79,6 +79,7 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1807, 642);
             panel2.TabIndex = 19;
+            panel2.Paint += panel2_Paint;
             // 
             // btnDescuento
             // 

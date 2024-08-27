@@ -7,6 +7,9 @@
     <Compile Update="CompraControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="EmpleadoGestion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -16,8 +19,26 @@
     <Compile Update="Form3.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FormCajero.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FormDescuento.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormFarmaceutico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormPlanillas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="InventarioControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="PlanillaGestion.cs">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="RecepcionControl.cs">
       <SubType>UserControl</SubType>

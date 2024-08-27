@@ -12,7 +12,7 @@ namespace ProyectoParcial
 {
     public partial class ClientesGestion : UserControl
     {
-        // Simulamos una base de datos en memoria
+      
         private List<Cliente> clientes = new List<Cliente>();
         private int nextId = 1; // Controla el próximo ID a asignar
 
@@ -29,27 +29,27 @@ namespace ProyectoParcial
 
             // Agregar columnas al DataGridView y establecer su ancho
             dgvClientes.Columns.Add("colId", "ID");
-            dgvClientes.Columns["colId"].Width = 50; // Ajusta el ancho de la columna ID
+            dgvClientes.Columns["colId"].Width = 50; 
 
             dgvClientes.Columns.Add("colCodigo", "Código");
-            dgvClientes.Columns["colCodigo"].Width = 80; // Ajusta el ancho de la columna Código
+            dgvClientes.Columns["colCodigo"].Width = 80;
 
             dgvClientes.Columns.Add("colNombres", "Nombres");
-            dgvClientes.Columns["colNombres"].Width = 150; // Ajusta el ancho de la columna Nombres
+            dgvClientes.Columns["colNombres"].Width = 150; 
 
             dgvClientes.Columns.Add("colApellidos", "Apellidos");
-            dgvClientes.Columns["colApellidos"].Width = 150; // Ajusta el ancho de la columna Apellidos
+            dgvClientes.Columns["colApellidos"].Width = 150; 
 
             dgvClientes.Columns.Add("colCorreo", "Correo");
-            dgvClientes.Columns["colCorreo"].Width = 180; // Ajusta el ancho de la columna Correo
+            dgvClientes.Columns["colCorreo"].Width = 180; 
 
             dgvClientes.Columns.Add("colTelefono", "Teléfono");
-            dgvClientes.Columns["colTelefono"].Width = 110; // Ajusta el ancho de la columna Teléfono
+            dgvClientes.Columns["colTelefono"].Width = 110; 
 
             dgvClientes.Columns.Add("colDireccion", "Dirección");
-            dgvClientes.Columns["colDireccion"].Width = 750; // Ajusta el ancho de la columna Dirección
+            dgvClientes.Columns["colDireccion"].Width = 750; 
 
-            // Definir la columna de ID como solo lectura porque es autoincremental
+            
             dgvClientes.Columns["colId"].ReadOnly = true;
         }
 
@@ -214,7 +214,7 @@ namespace ProyectoParcial
         {
             if (dgvClientes.SelectedRows.Count > 0)
             {
-                // Rellenar los campos de texto con los datos seleccionados para modificación
+                
                 DataGridViewRow selectedRow = dgvClientes.SelectedRows[0];
                 txtCodigo.Text = selectedRow.Cells["colCodigo"].Value.ToString();
                 txtNombres.Text = selectedRow.Cells["colNombres"].Value.ToString();
@@ -227,8 +227,13 @@ namespace ProyectoParcial
 
         private void ClientesGestion_Load(object sender, EventArgs e)
         {
-            // Configurar el evento de cambio de selección del DataGridView
+            
             dgvClientes.SelectionChanged += dgvClientes_SelectionChanged;
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

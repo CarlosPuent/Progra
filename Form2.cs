@@ -12,7 +12,7 @@ namespace ProyectoParcial
 {
     public partial class Form2 : Form
     {
-        // Propiedades públicas para obtener los valores ingresados
+       
         public int CantidadRecepcionada { get; private set; }
         public decimal PrecioVenta { get; private set; }
         public string Pasillo { get; private set; }
@@ -36,7 +36,7 @@ namespace ProyectoParcial
             cmbPasillo.Items.AddRange(new string[] { "Pasillo 1", "Pasillo 2", "Pasillo 3" });
             cmbEstante.Items.AddRange(new string[] { "Estante A", "Estante B", "Estante C" });
 
-            // Opcional: Selecciona el primer elemento de cada ComboBox por defecto si lo deseas
+           
             cmbPasillo.SelectedIndex = 0;
             cmbEstante.SelectedIndex = 0;
         }

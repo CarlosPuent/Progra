@@ -15,12 +15,12 @@ namespace ProyectoParcial
     {
         public event EventHandler VolverClicked;
         private List<Producto> carritoCompras = new List<Producto>();
-        private int currentId = 1; // Variable para manejar el ID autoincremental
+        private int currentId = 1; // ID autoincremental
 
         public CompraControl()
         {
             InitializeComponent();
-            dgvCarritoCompras.SelectionChanged += DgvCarritoCompras_SelectionChanged; // Añadir manejador para el evento de selección
+            dgvCarritoCompras.SelectionChanged += DgvCarritoCompras_SelectionChanged; 
         }
 
         private void CompraControl_Load(object sender, EventArgs e)
@@ -36,7 +36,7 @@ namespace ProyectoParcial
             dgvCarritoCompras.Columns.Add("colMarca", "Marca");
             dgvCarritoCompras.Columns.Add("colEstatus", "Estatus");
             dgvCarritoCompras.Columns.Add("colProveedor", "Proveedor");
-            dgvCarritoCompras.Columns.Add("colTotal", "Total"); // Nueva columna para el total
+            dgvCarritoCompras.Columns.Add("colTotal", "Total"); 
 
             // Inicializar ComboBoxes
             cmbCategoria.Items.AddRange(new string[] { "Categoría A", "Categoría B", "Categoría C" });
@@ -44,7 +44,7 @@ namespace ProyectoParcial
             cmbEstatus.Items.AddRange(new string[] { "Disponible", "No disponible" });
             cmbProveedor.Items.AddRange(new string[] { "Proveedor A", "Proveedor B", "Proveedor C" });
 
-            // Inicializar el ID del producto
+           
             txtId.Text = currentId.ToString();
         }
 
@@ -108,10 +108,10 @@ namespace ProyectoParcial
                 };
                 carritoCompras.Add(nuevoProducto);
 
-                // Asegurar que el DataGridView no tiene un DataSource configurado
+                //  Aqui nos aseguramos que el DataGridView no tiene un DataSource configurado
                 dgvCarritoCompras.DataSource = null;
 
-                // Agregar los datos al DataGridView para visualización
+            
                 dgvCarritoCompras.Rows.Add(nuevoProducto.Id, nuevoProducto.Codigo, nuevoProducto.Nombre, nuevoProducto.Cantidad, nuevoProducto.PrecioCompra, nuevoProducto.Categoria, nuevoProducto.Marca, nuevoProducto.Estatus, proveedor, totalProducto);
 
                 // Incrementar el ID para el próximo producto
@@ -145,25 +145,25 @@ namespace ProyectoParcial
                 return;
             }
 
-            // Generar y mostrar la factura
+            
             GenerarFactura();
 
-            // Limpiar el carrito después de confirmar la compra
+            
             carritoCompras.Clear();
             dgvCarritoCompras.Rows.Clear();
-            lblTotal.Text = "Total: $0.00"; // Reiniciar el total general
+            lblTotal.Text = "Total: $0.00"; 
 
             MessageBox.Show("Compra confirmada exitosamente.");
         }
 
         private void GenerarFactura()
         {
-            // Crear un nuevo formulario para mostrar la factura
+            
             Form facturaForm = new Form();
             facturaForm.Text = "Factura de Compra";
             facturaForm.Size = new Size(400, 600);
 
-            // Crear un TextBox multilinea para mostrar los detalles de la factura
+            
             TextBox txtFactura = new TextBox();
             txtFactura.Multiline = true;
             txtFactura.Dock = DockStyle.Fill;
@@ -189,13 +189,13 @@ namespace ProyectoParcial
             facturaContent.AppendLine("----------------------------");
             facturaContent.AppendLine($"Total: {total:C2}");
 
-            // Asignar el contenido generado al TextBox
+            
             txtFactura.Text = facturaContent.ToString();
 
-            // Agregar el TextBox al formulario
+            
             facturaForm.Controls.Add(txtFactura);
 
-            // Mostrar el formulario de la factura
+         
             facturaForm.ShowDialog();
         }
 
@@ -231,7 +231,7 @@ namespace ProyectoParcial
 
                 if (producto != null)
                 {
-                    // Actualizar los datos del producto
+                    
                     producto.Codigo = txtCodigo.Text;
                     producto.Nombre = txtNombreProducto.Text;
                     producto.Cantidad = int.Parse(txtCantidad.Text);
@@ -252,7 +252,7 @@ namespace ProyectoParcial
                     row.Cells["colMarca"].Value = producto.Marca;
                     row.Cells["colEstatus"].Value = producto.Estatus;
                     row.Cells["colProveedor"].Value = cmbProveedor.SelectedItem.ToString();
-                    row.Cells["colTotal"].Value = totalProducto; // Actualizar la columna Total
+                    row.Cells["colTotal"].Value = totalProducto; 
 
                     MessageBox.Show("Producto modificado correctamente.");
 
@@ -354,9 +354,9 @@ namespace ProyectoParcial
 
         private void dgvCarritoCompras_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0) // Asegura que se selecciona una fila y no un encabezado de columna
+            if (e.RowIndex >= 0) // Aqui nos aseguramos que se selecciona una fila y no un encabezado de columna
             {
-                // Obtener la fila seleccionada
+                
                 DataGridViewRow row = dgvCarritoCompras.Rows[e.RowIndex];
 
                 // Evitar error de conversión si alguna celda está vacía
@@ -404,10 +404,10 @@ namespace ProyectoParcial
 
         private void ValidarSoloNumerosEnteros(object sender, KeyPressEventArgs e)
         {
-            // Permitir solo números (digitos) y teclas de control (como la tecla de retroceso)
+            
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
-                e.Handled = true; // Cancela el evento si el carácter no es un número
+                e.Handled = true; 
             }
         }
 
@@ -440,7 +440,7 @@ namespace ProyectoParcial
 
         private void txtCantidad_KeyPress_1(object sender, KeyPressEventArgs e)
         {
-            ValidarSoloNumerosEnteros(sender, e); // Usar la validación solo para números enteros
+            ValidarSoloNumerosEnteros(sender, e); 
         }
 
         private void txtNombreProducto_KeyPress_1(object sender, KeyPressEventArgs e)
@@ -463,7 +463,7 @@ namespace ProyectoParcial
             cmbMarca.SelectedIndex = -1;
             cmbEstatus.SelectedIndex = -1;
             cmbProveedor.SelectedIndex = -1;
-            txtId.Text = currentId.ToString(); // Reiniciar el ID mostrado en la interfaz
+            txtId.Text = currentId.ToString(); 
         }
 
         private void dgvCarritoCompras_CellContentClick(object sender, DataGridViewCellEventArgs e)

@@ -15,16 +15,16 @@ namespace ProyectoParcial
         public RecepcionControl()
         {
             InitializeComponent();
-            this.MinimumSize = new Size(800, 600); // Ajusta el tamaño mínimo según sea necesario
+            this.MinimumSize = new Size(800, 600); 
         }
 
         private void RecepcionControl_Load(object sender, EventArgs e)
         {
-            // Configurar columnas del DataGridView para productos disponibles
+            
             ConfigurarColumnasProductosDisponibles();
-            // Configurar columnas del DataGridView para productos recepcionados
+            
             ConfigurarColumnasProductosRecepcionados();
-            // Cargar productos disponibles en el DataGridView
+            
             CargarProductosDisponibles();
         }
 
@@ -54,12 +54,12 @@ namespace ProyectoParcial
             dgvProductosRecepcionados.Columns.Add("colCantidadRecepcionada", "Cantidad Recepcionada");
             dgvProductosRecepcionados.Columns.Add("colPasillo", "Pasillo");
             dgvProductosRecepcionados.Columns.Add("colEstante", "Estante");
-            dgvProductosRecepcionados.Columns.Add("colGanancia", "Ganancia"); // Colocar la columna de Ganancia al final
+            dgvProductosRecepcionados.Columns.Add("colGanancia", "Ganancia");
         }
 
         private void CargarProductosDisponibles()
         {
-            // Lógica para cargar productos disponibles. Este es un ejemplo estático, reemplázalo con tu lógica dinámica.
+            
             dgvProductosDisponibles.Rows.Add(1, "P001", "Producto A", "Categoría A", "Marca X", "Disponible", 10.00, 50);
             dgvProductosDisponibles.Rows.Add(2, "P002", "Producto B", "Categoría B", "Marca Y", "Disponible", 15.00, 30);
         }
@@ -89,21 +89,21 @@ namespace ProyectoParcial
                     string pasillo = form2.Pasillo;
                     string estante = form2.Estante;
 
-                    // Validar que la cantidad a recepcionar no sea mayor a la cantidad disponible
+                   
                     if (cantidadRecepcionada > cantidadComprada)
                     {
                         MessageBox.Show("La cantidad a recepcionar no puede ser mayor que la cantidad comprada.");
                         return;
                     }
 
-                    // Calcular la ganancia individual
+                    
                     decimal gananciaIndividual = CalcularGanancia(precioCompra, nuevoPrecioVenta, cantidadRecepcionada);
 
-                    // Actualizar la cantidad comprada en el DataGridView de productos disponibles
+                    
                     int nuevaCantidadComprada = cantidadComprada - cantidadRecepcionada;
                     selectedRow.Cells["colCantidadComprada"].Value = nuevaCantidadComprada;
 
-                    // Agregar el producto recepcionado al DataGridView de productos recepcionados
+                    
                     dgvProductosRecepcionados.Rows.Add(
                         selectedRow.Cells["colId"].Value,
                         selectedRow.Cells["colCodigo"].Value,
@@ -220,7 +220,7 @@ namespace ProyectoParcial
                 // Sumar ganancia total para la factura
                 gananciaTotalFactura += ganancia;
 
-                // Añadir detalles del producto a la factura
+               
                 factura.AppendLine($"Código: {codigo}, Nombre: {nombre}, Precio Venta: {precioVenta:C2}, Cantidad: {cantidad}, Ganancia: {ganancia:C2}");
             }
 
@@ -229,7 +229,7 @@ namespace ProyectoParcial
 
             MessageBox.Show(factura.ToString(), "Factura Generada");
 
-            // Limpiar productos recepcionados después de confirmar
+           
             dgvProductosRecepcionados.Rows.Clear();
             lblGanancia.Text = "Ganancia Total: $0.00";
         }

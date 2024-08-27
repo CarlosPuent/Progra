@@ -34,6 +34,8 @@
             recepciónToolStripMenuItem = new ToolStripMenuItem();
             ventasToolStripMenuItem = new ToolStripMenuItem();
             clientesToolStripMenuItem = new ToolStripMenuItem();
+            planillasToolStripMenuItem = new ToolStripMenuItem();
+            empleadosToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -48,7 +50,7 @@
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { comprasToolStripMenuItem, recepciónToolStripMenuItem, ventasToolStripMenuItem, clientesToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { comprasToolStripMenuItem, recepciónToolStripMenuItem, ventasToolStripMenuItem, clientesToolStripMenuItem, planillasToolStripMenuItem, empleadosToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(1328, 28);
@@ -83,6 +85,19 @@
             clientesToolStripMenuItem.Text = "Clientes";
             clientesToolStripMenuItem.Click += clientesToolStripMenuItem_Click;
             // 
+            // planillasToolStripMenuItem
+            // 
+            planillasToolStripMenuItem.Name = "planillasToolStripMenuItem";
+            planillasToolStripMenuItem.Size = new Size(77, 24);
+            planillasToolStripMenuItem.Text = "Planillas";
+            planillasToolStripMenuItem.Click += planillasToolStripMenuItem_Click_1;
+            // 
+            // empleadosToolStripMenuItem
+            // 
+            empleadosToolStripMenuItem.Name = "empleadosToolStripMenuItem";
+            empleadosToolStripMenuItem.Size = new Size(97, 24);
+            empleadosToolStripMenuItem.Text = "Empleados";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -108,5 +123,7 @@
         private ToolStripMenuItem recepciónToolStripMenuItem;
         private ToolStripMenuItem ventasToolStripMenuItem;
         private ToolStripMenuItem clientesToolStripMenuItem;
+        private ToolStripMenuItem planillasToolStripMenuItem;
+        private ToolStripMenuItem empleadosToolStripMenuItem;
     }
 }

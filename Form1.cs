@@ -2,6 +2,7 @@ using System;
 using System.Windows.Forms;
 using System;
 using System.Windows.Forms;
+
 namespace ProyectoParcial
 {
     public partial class Form1 : Form
@@ -9,8 +10,17 @@ namespace ProyectoParcial
         public Form1()
         {
             InitializeComponent();
-            this.Size = new Size(1800, 700); // Establecer tamaño inicial del formulario
-            this.MinimumSize = new Size(1000, 400); // Establecer un tamaño mínimo para evitar que los controles se corten
+            this.Size = new Size(1800, 700); 
+            this.MinimumSize = new Size(1000, 400); 
+
+            
+            this.comprasToolStripMenuItem.Click += new System.EventHandler(this.comprasToolStripMenuItem_Click);
+            this.recepciónToolStripMenuItem.Click += new System.EventHandler(this.recepciónToolStripMenuItem_Click);
+            this.ventasToolStripMenuItem.Click += new System.EventHandler(this.ventasToolStripMenuItem_Click);
+            this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
+            this.planillasToolStripMenuItem.Click += new System.EventHandler(this.planillasToolStripMenuItem_Click);
+
+            this.empleadosToolStripMenuItem.Click += new System.EventHandler(this.empleadosToolStripMenuItem_Click);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -37,6 +47,16 @@ namespace ProyectoParcial
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MostrarUserControl(new ClientesGestion());
+        }
+
+        private void planillasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MostrarUserControl(new PlanillaGestion());
+        }
+
+        private void empleadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MostrarUserControl(new EmpleadoGestion());
         }
 
         private void MostrarUserControl(UserControl control)
@@ -66,28 +86,34 @@ namespace ProyectoParcial
 
         private void MostrarMenuPrincipal()
         {
-            // Si el menú principal son simplemente botones en el form, asegúrate de que estén visibles
+            
             comprasToolStripMenuItem.Visible = true;
             recepciónToolStripMenuItem.Visible = true;
             ventasToolStripMenuItem.Visible = true;
             clientesToolStripMenuItem.Visible = true;
-            // Aquí puedes agregar cualquier control o contenido adicional que quieras mostrar en el menú principal
-            // Como ejemplo, si tienes un label o algún otro control que deba estar visible, lo configuras aquí.
+            planillasToolStripMenuItem.Visible = true;
+            empleadosToolStripMenuItem.Visible = true;
 
-            // Establecer el control Dock en el panel para que ocupe todo el espacio disponible
+            
             panelContenido.Dock = DockStyle.Fill;
         }
 
-        private void panelContenido_Paint(object sender, PaintEventArgs e)
+        private void planillasToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
 
         }
+
+    private void panelContenido_Paint(object sender, PaintEventArgs e)
+        {
+           
+        }
     }
 
-    // Interfaz para los controles que necesitan la opción de "Volver"
+    
     public interface IVolverControl
     {
         event EventHandler VolverClicked;
     }
 }
+
 
